@@ -1,0 +1,7 @@
+version: '2'
+services:
+    inner-docker:
+        build: .
+        container_name: "inner-docker"
+        network_mode: "bridge"
+        restart: never

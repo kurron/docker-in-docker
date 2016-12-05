@@ -1,0 +1,11 @@
+version: '2'
+services:
+    docker-in-docker:
+        build: .
+        container_name: "docker-in-docker"
+        network_mode: "bridge"
+        restart: never
+        volumes:
+            - /usr/local/bin/docker-compose:/usr/local/bin/docker-compose
+            - /usr/bin/docker:/usr/bin/docker
+            - /var/run/docker.sock:/var/run/docker.sock
