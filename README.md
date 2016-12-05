@@ -20,8 +20,26 @@ Nothing to install.
 see something similar to this:
 
 ```
-foo
+Creating docker-in-docker
+Attaching to docker-in-docker
+docker-in-docker    | Building inner-docker
+docker-in-docker    | Step 1 : FROM ubuntu:latest
+docker-in-docker    |  ---> 4ca3a192ff2a
+docker-in-docker    | Step 2 : ENTRYPOINT /bin/echo Hello from inside!
+docker-in-docker    |  ---> Running in 0ff917f0eaf6
+docker-in-docker    |  ---> c334cf3a3a18
+docker-in-docker    | Removing intermediate container 0ff917f0eaf6
+docker-in-docker    | Image for service inner-docker was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+docker-in-docker    | Successfully built c334cf3a3a18
+docker-in-docker    | Creating inner-docker
+docker-in-docker    | Attaching to inner-docker
+docker-in-docker    | inner-docker    | Hello from inside!
+docker-in-docker    | inner-docker exited with code 0
+docker-in-docker    | docker-in-docker exited with code 0
 ```
+
+##Clean Up
+`docker-compose down` will destroy all containers and used in this experiment.
 
 #Troubleshooting
 
